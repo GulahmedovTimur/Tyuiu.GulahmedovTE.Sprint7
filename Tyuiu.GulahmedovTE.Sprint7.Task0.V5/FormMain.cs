@@ -142,6 +142,19 @@ namespace Tyuiu.GulahmedovTE.Sprint7.Task0.V5
 
         private void buttonGrafic_Click(object sender, EventArgs e)
         {
+            // Очищаем старый график перед построением нового
+            chart_GTE.Series.Clear();
+            chart_GTE.Titles.Clear();
+            if (chart_GTE.ChartAreas.Count > 0)
+            {
+                chart_GTE.ChartAreas[0].AxisX.Title = "";
+                chart_GTE.ChartAreas[0].AxisY.Title = "";
+            }
+            BuildChart();
+        }
+
+        private void BuildChart()
+        {
             try
             {
                 int rows = dataGridViewMatrix_GTE.RowCount;
@@ -209,7 +222,7 @@ namespace Tyuiu.GulahmedovTE.Sprint7.Task0.V5
             }
             catch
             {
-                MessageBox.Show("Невозможно повторно построить график", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Невозможно построить график", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -244,9 +257,42 @@ namespace Tyuiu.GulahmedovTE.Sprint7.Task0.V5
             dataGridViewMatrix_GTE.CurrentCell = dataGridViewMatrix_GTE.Rows[dataGridViewMatrix_GTE.Rows.Count - 1].Cells[0];
         }
 
-        private void splitter1_SplitterMoved(object sender, SplitterEventArgs e)
+        private void ClearTableAndChart()
         {
+            //очистка таблицы
+            dataGridViewMatrix_GTE.Rows.Clear();
+            dataGridViewMatrix_GTE.Refresh();
 
+            // очистка графика
+            if (chart_GTE.ChartAreas.Count > 0)
+            {
+                chart_GTE.Series.Clear();
+                chart_GTE.ChartAreas[0].AxisX.Title = ""; // сбрасываем заголовок оси X
+                chart_GTE.ChartAreas[0].AxisY.Title = ""; // сбрасываем заголовок оси Y
+                chart_GTE.Titles.Clear(); // сбрасываем заголовки графика
+            }
+
+        }
+
+        private void buttonClear_GTE_Click(object sender, EventArgs e)
+        {
+            FormWarn confirmationForm = new FormWarn(); // Создаем экземпляр формы подтверждения
+            DialogResult result = confirmationForm.ShowDialog(this);  // Запускаем форму как диалог
+
+            if (confirmationForm.ConfirmationResult) // Если пользователь нажал "Да"
+            {
+                ClearTableAndChart(); // Вызываем метод для очистки
+            }
+        }
+
+        private void buttonClear_GTE_MouseEnter(object sender, EventArgs e)
+        {
+            buttonClear_GTE.BackColor = Color.Red;
+        }
+
+        private void buttonClear_GTE_MouseLeave(object sender, EventArgs e)
+        {
+            buttonClear_GTE.BackColor = SystemColors.Control;
         }
     }
 }

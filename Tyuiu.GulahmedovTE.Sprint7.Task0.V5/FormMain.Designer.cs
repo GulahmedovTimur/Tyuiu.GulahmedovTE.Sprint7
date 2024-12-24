@@ -75,11 +75,12 @@
             postavshik_GTE = new DataGridViewTextBoxColumn();
             price_GTE = new DataGridViewTextBoxColumn();
             groupBox5 = new GroupBox();
-            pictureBox2 = new PictureBox();
             groupBox6 = new GroupBox();
             pictureBox1 = new PictureBox();
             buttonAddRow_GTE = new Button();
             splitter1 = new Splitter();
+            buttonClear_GTE = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)formMainbindingSource_GTE).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -88,9 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)chart_GTE).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatrix_GTE).BeginInit();
             groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // openFileDialogButton_GTE
@@ -321,7 +322,7 @@
             // 
             buttonGrafic.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold);
             buttonGrafic.ForeColor = Color.DarkSlateGray;
-            buttonGrafic.Location = new Point(75, 25);
+            buttonGrafic.Location = new Point(79, 26);
             buttonGrafic.Name = "buttonGrafic";
             buttonGrafic.Size = new Size(149, 54);
             buttonGrafic.TabIndex = 0;
@@ -468,23 +469,13 @@
             // groupBox5
             // 
             groupBox5.BackColor = Color.DarkSlateGray;
-            groupBox5.Controls.Add(pictureBox2);
             groupBox5.Controls.Add(buttonGrafic);
+            groupBox5.Controls.Add(pictureBox2);
             groupBox5.Location = new Point(60, 395);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(340, 100);
             groupBox5.TabIndex = 11;
             groupBox5.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(230, 25);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(42, 54);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // groupBox6
             // 
@@ -523,8 +514,30 @@
             splitter1.Location = new Point(807, 0);
             splitter1.Name = "splitter1";
             splitter1.Size = new Size(10, 1041);
-            splitter1.TabIndex = 13;
+            splitter1.TabIndex = 14;
             splitter1.TabStop = false;
+            // 
+            // buttonClear_GTE
+            // 
+            buttonClear_GTE.Location = new Point(643, 945);
+            buttonClear_GTE.Name = "buttonClear_GTE";
+            buttonClear_GTE.Size = new Size(149, 53);
+            buttonClear_GTE.TabIndex = 15;
+            buttonClear_GTE.Text = "Очистить все";
+            buttonClear_GTE.UseVisualStyleBackColor = true;
+            buttonClear_GTE.Click += buttonClear_GTE_Click;
+            buttonClear_GTE.MouseEnter += buttonClear_GTE_MouseEnter;
+            buttonClear_GTE.MouseLeave += buttonClear_GTE_MouseLeave;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(234, 26);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(42, 54);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
             // FormMain
             // 
@@ -532,6 +545,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1904, 1041);
+            Controls.Add(buttonClear_GTE);
             Controls.Add(splitter1);
             Controls.Add(groupBox6);
             Controls.Add(buttonAdmin_GTE);
@@ -558,9 +572,9 @@
             ((System.ComponentModel.ISupportInitialize)chart_GTE).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewMatrix_GTE).EndInit();
             groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -610,8 +624,9 @@
         private GroupBox groupBox5;
         private GroupBox groupBox6;
         private Button buttonAddRow_GTE;
-        private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private Splitter splitter1;
+        private Button buttonClear_GTE;
+        private PictureBox pictureBox2;
     }
 }

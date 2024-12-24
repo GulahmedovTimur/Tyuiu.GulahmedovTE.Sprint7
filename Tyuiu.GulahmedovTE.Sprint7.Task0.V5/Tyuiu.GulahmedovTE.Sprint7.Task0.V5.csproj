@@ -6,7 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PackageIcon>table_add.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <SplashScreen Include="..\Библиотека иконок для кнопок www.icon100.com\table_add.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </SplashScreen>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="3.2.0" />
